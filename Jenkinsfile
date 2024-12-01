@@ -4,7 +4,9 @@ pipeline {
     triggers {
         pollSCM('H/5 * * * *') // Vérifie les modifications toutes les 5 minutes
     }
-
+    tools {
+        docker 'latest'
+    }
     stages {
         stage('Clone Repository') {
             steps {
